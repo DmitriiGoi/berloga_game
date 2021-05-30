@@ -11,7 +11,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@javax.persistence.Table(name = "user")
+@javax.persistence.Table(name = "users")
 public class User extends BaseEntity {
 
     @OneToOne

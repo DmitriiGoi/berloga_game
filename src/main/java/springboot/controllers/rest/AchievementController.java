@@ -1,9 +1,7 @@
 package springboot.controllers.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import springboot.domain.Result;
 import springboot.domain.entity.Achievement;
 import springboot.service.AchievementService;
@@ -15,9 +13,15 @@ public class AchievementController {
     private AchievementService achievementService;
 
     @PostMapping
-    public Result<Achievement> createAchievement(Achievement achievement) {
+    public Result<Achievement> createAchievement(@RequestBody Achievement achievement) {
         Achievement createdAchievement = achievementService.createAchievement(achievement);
         return Result.ok(createdAchievement);
+    }
+
+    @DeleteMapping
+    public Result deleteAchievement(@RequestParam Long achievementId) {
+        achievementService.deleteAchievement(achievementId);
+        return Result.ok(null);
     }
 
 }

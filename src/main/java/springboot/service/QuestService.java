@@ -78,8 +78,7 @@ public class QuestService {
         return questRepository.findAll();
     }
 
-    public Result deleteQuest(Long questId) {
+    public void deleteQuest(Long questId) {
         questRepository.deleteById(questId);
-        return Result.ok(null);
     }
 }

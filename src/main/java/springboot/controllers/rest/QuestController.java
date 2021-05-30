@@ -27,6 +27,7 @@ public class QuestController {
 
     @DeleteMapping
     public Result deleteQuest(@RequestParam Long questId) {
-        return questService.deleteQuest(questId);
+        questService.deleteQuest(questId);
+        return Result.ok(null);
     }
 }

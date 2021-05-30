@@ -66,7 +66,9 @@
             <td>${achievement.attributeValue}</td>
             <td>${achievement.attribute.code}</td>
             <td>
-                <button id="${achievement.id}" onClick="deleteAchievement()">Удалить</button>
+                <button id="deleteAchievementButton" id-value="${achievement.id}" onClick="deleteAchievement()">
+                    Удалить
+                </button>
             </td>
         </tr>
     </c:forEach>
@@ -76,7 +78,7 @@
         <td><input type="number" placeholder="Стоимость достижения" id="achievementValue"/></td>
         <td><select id="achievementAttribute">
             <c:forEach items="${attributes}" var="attribute">
-                <option>${attribute.code}</option>
+                <option id-value="${attribute.name}">${attribute.code}</option>
             </c:forEach>
         </select></td>
         <td>
@@ -94,7 +96,7 @@
             <td>${user.login}</td>
             <td>***</td>
             <td>
-                <button id="${user.id}" onClick="deleteUser()">Удалить</button>
+                <button id="deleteUserButton" id-value="${user.id}" onClick="deleteUser()">Удалить</button>
             </td>
         </tr>
     </c:forEach>

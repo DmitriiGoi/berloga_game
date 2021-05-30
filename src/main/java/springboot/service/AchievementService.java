@@ -19,4 +19,8 @@ public class AchievementService {
     public List<Achievement> getAchievementList() {
         return achievementRepository.findAll();
     }
+
+    public void deleteAchievement(Long achievementId) {
+        achievementRepository.deleteById(achievementId);
+    }
 }

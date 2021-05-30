@@ -1,40 +1,40 @@
-create table `achievement`
+create table achievement
 (
-    id              int           not null primary key auto_increment,
+    id              SERIAL        not null primary key,
     title           varchar(100)  not null,
     description     varchar(1000) not null,
     attribute       varchar(3)    not null,
     attribute_value int           not null
 );
 
-create table `achievement_unlocked`
+create table achievement_unlocked
 (
-    id             int      not null primary key auto_increment,
-    user_id        int      not null,
-    achievement_id int      not null,
-    unlock_date    datetime not null
+    id             SERIAL not null primary key,
+    user_id        int    not null,
+    achievement_id int    not null,
+    unlock_date    date   not null
 );
 
-create table `quest`
+create table quest
 (
-    id              int           not null primary key auto_increment,
+    id              SERIAL        not null primary key,
     main_attribute  varchar(3)    not null,
     increment_value int           not null,
     title           varchar(100)  not null,
     description     varchar(1000) not null
 );
 
-create table `quest_completed`
+create table quest_completed
 (
-    id            int      not null primary key auto_increment,
-    quest_id      int      not null,
-    user_id       int      not null,
-    complete_date datetime not null
+    id            SERIAL not null primary key,
+    quest_id      int    not null,
+    user_id       int    not null,
+    complete_date date   not null
 );
 
-create table `user`
+create table users
 (
-    id            int          not null primary key auto_increment,
+    id            SERIAL       not null primary key,
     user_stats_id int          not null,
     login         varchar(100) not null,
     name          varchar(100) not null,
@@ -42,13 +42,13 @@ create table `user`
     is_admin      bit          not null
 );
 
-create table `user_stats`
+create table user_stats
 (
-    id           int not null primary key auto_increment,
-    user_id      int not null,
-    strength     int not null,
-    intelligent  int not null,
-    dexterity    int not null,
-    constitution int not null
+    id           SERIAL not null primary key,
+    user_id      int    not null,
+    strength     int    not null,
+    intelligent  int    not null,
+    dexterity    int    not null,
+    constitution int    not null
 );
 
