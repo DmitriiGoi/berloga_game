@@ -35,11 +35,10 @@ create table quest_completed
 create table users
 (
     id            SERIAL       not null primary key,
-    user_stats_id int          not null,
     login         varchar(100) not null,
     name          varchar(100) not null,
     password      varchar(100) not null,
-    is_admin      bit          not null
+    is_admin boolean not null
 );
 
 create table user_stats

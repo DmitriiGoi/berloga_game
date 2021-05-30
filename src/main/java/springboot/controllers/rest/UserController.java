@@ -7,14 +7,14 @@ import springboot.domain.entity.User;
 import springboot.service.UserService;
 
 @RestController
-@RequestMapping("/api/user/")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     @PostMapping
-    public Result<User> createUser(User user) {
+    public Result<User> createUser(@RequestBody User user) {
         User createdUser = userService.createUser(user);
         return Result.ok(createdUser);
     }

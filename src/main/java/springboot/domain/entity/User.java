@@ -14,7 +14,7 @@ import java.util.List;
 @javax.persistence.Table(name = "users")
 public class User extends BaseEntity {
 
-    @OneToOne
+    @OneToOne(mappedBy = "user")
     private UserStats userStats;
     private String name;
     private String login;

@@ -21,10 +21,18 @@ public class UserStats extends BaseEntity {
     private int constitution;
 
     public UserStats() {
+        this.strength = 0;
+        this.dexterity = 0;
+        this.constitution = 0;
+        this.intelligent = 0;
     }
 
     public UserStats(User user) {
         this.user = user;
+        this.strength = 0;
+        this.dexterity = 0;
+        this.constitution = 0;
+        this.intelligent = 0;
     }
 
     public void incrementIntelligent(int value) {

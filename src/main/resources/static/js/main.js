@@ -84,9 +84,35 @@ function createAchievement() {
 }
 
 function deleteUser() {
-
+    var userId = $('#deleteUserButton').attr('id-value');
+    $.ajax({
+        type: "DELETE",
+        contentType: "application/json; charset=utf-8",
+        url: "/api/user?userId=" + userId,
+        success: function (deleteUser) {
+            if (deleteUser.error == null) {
+                alert('Пользователь успешно удален')
+            }
+        }
+    });
 }
 
 function createUser() {
-
+    var payload = {
+        name: $('#userName').val(),
+        login: $('#userLogin').val(),
+        password: $('#userPassword').val(),
+    };
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        url: "/api/user",
+        data: JSON.stringify(payload),
+        dataType: "json",
+        success: function (userCreate) {
+            if (userCreate.error == null) {
+                alert('Пользователь успешно создан')
+            }
+        }
+    });
 }

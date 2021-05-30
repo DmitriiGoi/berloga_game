@@ -96,7 +96,9 @@
             <td>${user.login}</td>
             <td>***</td>
             <td>
-                <button id="deleteUserButton" id-value="${user.id}" onClick="deleteUser()">Удалить</button>
+                <button id="deleteUserButton" id-value="${user.id}" id="deleteUserButton" onClick="deleteUser()">
+                    Удалить
+                </button>
             </td>
         </tr>
     </c:forEach>
