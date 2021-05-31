@@ -1,5 +1,6 @@
 package springboot.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -14,6 +15,7 @@ import javax.persistence.OneToOne;
 public class UserStats extends BaseEntity {
     @OneToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
     private int intelligent;
     private int strength;
